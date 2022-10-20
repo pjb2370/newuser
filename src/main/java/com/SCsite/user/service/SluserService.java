@@ -5,6 +5,8 @@ import com.SCsite.user.domain.Sluser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class SluserService {
@@ -19,8 +21,7 @@ public class SluserService {
         this.sluserRepository.save(S1);
     }
 
-    public void findByUserID(String userID) {
-
+    public String Login(String userID, String password) {
+        Optional<Sluser> opSluser = Optional.ofNullable(SluserRepository);
     }
-
 }

@@ -16,9 +16,13 @@ public class UserController {
 
     @PostMapping("/SignUp")
     @ResponseBody
-    public String Signup(@RequestParam("UserID") String userID, @RequestParam("Name") String name, @RequestParam("Password") String password, @RequestParam("Gender") String gender) {
-        this.sluserService.save(userID, name, password, gender);
-        return "회원가입 축하합니다.";
+    public String Signup(@RequestParam("UserID") String userID, @RequestParam("Name") String name, @RequestParam("Password") String password1, @RequestParam("Password") String password2, @RequestParam("Gender") String gender) {
+        if (password1 == password2){
+            this.sluserService.save(userID,name,password1,gender);
+            return "회원가입 축하합니다.";
+        }else {
+            return "비밀번호를 확인해주세요.";
+        }
     }
 
     @PostMapping("/Login")
