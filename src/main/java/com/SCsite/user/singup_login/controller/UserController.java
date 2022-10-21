@@ -1,8 +1,6 @@
-package com.SCsite.user.controller;
+package com.SCsite.user.singup_login.controller;
 
-import com.SCsite.user.dao.SluserRepository;
-import com.SCsite.user.domain.Sluser;
-import com.SCsite.user.service.SluserService;
+import com.SCsite.user.singup_login.service.SluserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -27,8 +25,7 @@ public class UserController {
 
     @PostMapping("/Login")
     @ResponseBody
-    public String Login(@RequestParam("UserID") String userID, @RequestParam("Password") String password) throws Exception {
-        this.sluserService.findByUserID(userID);
-        return userID;
+    public boolean Login(@RequestParam("UserID") String userID, @RequestParam("Password") String password) throws Exception {
+        return this.sluserService.Login(userID, password);
     }
 }

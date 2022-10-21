@@ -1,4 +1,4 @@
-package com.SCsite.user.domain;
+package com.SCsite.user.singup_login.domain;
 
 import lombok.Getter;
 import lombok.Setter;
